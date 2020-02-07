@@ -25,8 +25,11 @@
 
 
 def match_ends(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+    counter = 0
+    for word in words:
+        if len(word) >= 2 and word[0] == word[len(word) - 1]:
+            counter += 1
+    return counter
 
 
 # B. front_x

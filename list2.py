@@ -18,8 +18,13 @@
 
 
 def remove_adjacent(nums):
-    """Your code goes here.  Edit this docstring."""
-    return
+    new_nums = []
+    previous_num = 0
+    for num in nums:
+        if previous_num != num:
+            new_nums.append(num)
+        previous_num = num
+    return new_nums
 
 
 # E. Given two lists sorted in increasing order, create and return a merged

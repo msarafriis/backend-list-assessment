@@ -40,8 +40,19 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+    x_words = []
+    other_words = []
+    for word in words:
+        if word.startswith('x'):
+            x_words.append(word)
+        else:
+            other_words.append(word)
+    sorted_other_words = sorted(other_words)
+    sorted_x_words = sorted(x_words)
+    final_words = []
+    [final_words.append(word) for word in sorted_x_words]
+    [final_words.append(word) for word in sorted_other_words]
+    return final_words
 
 
 # C. sort_last

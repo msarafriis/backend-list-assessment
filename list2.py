@@ -32,8 +32,23 @@ def remove_adjacent(nums):
 # The solution should work in "linear" time, making a single pass of both lists.
 # Hint: Don't use `sort` or `sorted` -- they are not linear time.
 def linear_merge(list1, list2):
-    """Your code goes here.  Edit this docstring."""
-    return
+    # I got the result from:
+    # https://stackoverflow.com/a/2488935
+    combined_list = []
+    first_i = second_i = 0
+    total_len = len(list1) + len(list2)
+    while len(combined_list) != total_len:
+        if len(list1) == first_i:
+            combined_list += list2[second_i:]
+        elif len(list2) == second_i:
+            combined_list += list1[first_i:]
+        elif list1[first_i] < list2[second_i]:
+            combined_list.append(list1[first_i])
+            first_i += 1
+        else:
+            combined_list.append(list2[second_i])
+            second_i += 1
+    return combined_list
 
 
 # Simple provided test() function used in main() to print
